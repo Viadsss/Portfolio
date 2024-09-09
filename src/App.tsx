@@ -6,7 +6,7 @@ export default function App() {
 
   return (
     <>
-      <div className="grid-gradient-white dark:grid-gradient-dark min-h-screen overflow-x-hidden bg-zinc-100 text-gray-800 transition ease-in dark:bg-zinc-900 dark:text-gray-200">
+      <div className="grid-gradient-white dark:grid-gradient-dark gray-200 font-sora min-h-screen overflow-x-hidden bg-zinc-100 transition dark:bg-zinc-900 dark:text-white">
         <CursorTrack />
         <Navbar />
       </div>
