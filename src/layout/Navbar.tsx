@@ -17,7 +17,7 @@ const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   return (
-    <header className="relative flex h-16 items-center justify-between border-b border-blue-500/30 bg-zinc-100 px-8 backdrop-blur-0 transition dark:border-violet-600/30 dark:bg-zinc-900">
+    <header className="relative flex h-16 items-center justify-between border-b border-blue-600/30 bg-zinc-100 px-8 backdrop-blur-0 transition dark:border-violet-600/30 dark:bg-zinc-900">
       <a className="f flex items-center gap-x-2" href="/">
         <img
           src={VLogoDark}
@@ -74,7 +74,7 @@ const Navbar = () => {
       </div>
 
       <nav
-        className={`absolute left-0 top-16 w-full border-b border-blue-500/30 bg-zinc-100 transition md:hidden dark:border-violet-600/30 dark:bg-zinc-900 ${isNavbarOpen ? "opacity-100" : "opacity-0"}`}
+        className={`absolute left-0 top-16 w-full border-b border-blue-600/30 bg-zinc-100 transition md:hidden dark:border-violet-600/30 dark:bg-zinc-900 ${isNavbarOpen ? "opacity-100" : "opacity-0"}`}
       >
         <ul className="text-center">
           {links.map((link) => (
