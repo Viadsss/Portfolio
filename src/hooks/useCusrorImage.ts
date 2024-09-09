@@ -13,8 +13,6 @@ export default function useCursorImage(
         const posX = event.pageX + offsetX;
         const posY = event.pageY + offsetY;
 
-        console.log("X:", event.clientX, "Y:", event.clientY);
-
         imageRef.current.animate(
           [{ transform: `translate(${posX}px, ${posY}px)` }],
           {

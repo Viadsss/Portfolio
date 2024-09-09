@@ -23,8 +23,8 @@ export default function useTheme() {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    const handleChange = (e: MediaQueryListEvent) => {
-      setTheme(e.matches ? "dark" : "light");
+    const handleChange = (event: MediaQueryListEvent) => {
+      setTheme(event.matches ? "dark" : "light");
     };
 
     mediaQuery.addEventListener("change", handleChange);
