@@ -8,7 +8,7 @@ export default function useCursorImage(
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMousMove = (event: MouseEvent) => {
+    const handleMouseMove = (event: MouseEvent) => {
       if (imageRef.current) {
         const posX = event.pageX + offsetX;
         const posY = event.pageY + offsetY;
@@ -24,10 +24,10 @@ export default function useCursorImage(
       }
     };
 
-    window.addEventListener("mousemove", handleMousMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener("mousemove", handleMousMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [offsetX, offsetY, animationDuration]);
 
