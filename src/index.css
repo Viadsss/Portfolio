@@ -4,26 +4,25 @@
 
 @layer components {
   .grid-gradient-white {
-    height: 16rem;
     background-image: linear-gradient(
         to right,
         rgba(37, 99, 235, 0.3) 1px,
         transparent 1px
       ),
       linear-gradient(to bottom, rgba(37, 99, 235, 0.3) 1px, transparent 1px); /*from blue 600 / 0.3 */
-    background-size: 3rem 3rem;
+    background-size: 4rem 4rem;
     background-position: center center;
+    background-color: inherit;
   }
 
   .grid-gradient-dark {
-    height: 16rem;
     background-image: linear-gradient(
         to right,
         rgba(124, 58, 237, 0.3) 1px,
         transparent 1px
       ),
       linear-gradient(to bottom, rgb(124, 58, 237, 0.3) 1px, transparent 1px); /* from violet 600 / 0.3 */
-    background-size: 3rem 3rem;
+    background-size: 4rem 4rem;
     background-position: center center;
   }
 }
