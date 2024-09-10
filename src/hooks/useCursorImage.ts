@@ -13,14 +13,20 @@ export default function useCursorImage(
         const posX = event.pageX + offsetX;
         const posY = event.pageY + offsetY;
 
-        imageRef.current.animate(
-          [{ transform: `translate(${posX}px, ${posY}px)` }],
-          {
-            duration: animationDuration,
-            fill: "forwards",
-            easing: "ease",
-          },
-        );
+        const windowWidth = window.innerWidth;
+        const imageWidth = imageRef.current.offsetWidth;
+        const isOutOfBounds = posX < 0 || posX + imageWidth > windowWidth;
+
+        if (!isOutOfBounds) {
+          imageRef.current.animate(
+            [{ transform: `translate(${posX}px, ${posY}px)` }],
+            {
+              duration: animationDuration,
+              fill: "forwards",
+              easing: "ease",
+            },
+          );
+        }
       }
     };
 
