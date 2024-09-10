@@ -7,8 +7,8 @@ import { useState } from "react";
 
 const links = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
+  { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ];
@@ -43,7 +43,7 @@ const Navbar = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="transition hover:text-blue-600 dark:hover:text-violet-600"
+                    className="font-bold transition hover:text-blue-600 dark:hover:text-violet-600"
                   >
                     {link.name}
                   </a>
@@ -81,13 +81,13 @@ const Navbar = () => {
         </header>
 
         <nav
-          className={`sticky left-0 top-16 z-10 w-full border-b border-blue-600/30 bg-zinc-100 transition md:hidden dark:border-violet-600/30 dark:bg-zinc-900 ${isNavbarOpen ? "block" : "hidden"}`}
+          className={`absolute left-0 top-16 z-10 w-full border-b border-blue-600/30 bg-zinc-100 transition md:hidden dark:border-violet-600/30 dark:bg-zinc-900 ${isNavbarOpen ? "block" : "hidden"}`}
         >
           <ul className="text-center">
             {links.map((link) => (
               <li
                 key={link.name}
-                className="py-8 transition duration-200 hover:bg-blue-600 hover:text-white dark:hover:bg-violet-600"
+                className="py-8 font-bold transition duration-200 hover:bg-blue-600 hover:text-white dark:hover:bg-violet-600"
                 onClick={() => setIsNavbarOpen(false)}
               >
                 <a href={link.href}>{link.name}</a>
