@@ -13,7 +13,7 @@ const links = [
   { name: "Contact", href: "#contact" },
 ];
 
-const Navbar = () => {
+const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const hidden = useScrollHide(150);
@@ -100,4 +100,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
