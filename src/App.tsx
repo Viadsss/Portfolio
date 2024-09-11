@@ -11,17 +11,15 @@ export default function App() {
   console.log("Rendering App");
 
   return (
-    <>
-      <div className="grid-gradient-white dark:grid-gradient-dark relative h-full min-h-screen bg-zinc-100 font-sora text-black transition dark:bg-zinc-900 dark:text-white">
-        <CursorTrack />
-        <Header />
-        <Home />
-        <Projects />
-        <About />
-        <Skills />
-        <Contact />
-        <Footer />
-      </div>
-    </>
+    <div className="grid-gradient-white dark:grid-gradient-dark relative h-full min-h-screen bg-zinc-100 font-sora text-black transition dark:bg-zinc-900 dark:text-white">
+      <CursorTrack />
+      <Header />
+      <Home />
+      <Projects />
+      <About />
+      <Skills />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
