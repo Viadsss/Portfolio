@@ -8,6 +8,9 @@ export default {
         sora: ["Sora", "sans-serif"],
         martianMono: ["Martian Mono", "system-ui"],
       },
+      backgroundImage: {
+        "profile-img": "url('/src/assets/imgs/Me.jpg')",
+      },
       keyframes: {
         morph: {
           "0%, 100%": {
