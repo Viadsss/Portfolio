@@ -8,6 +8,7 @@ type ProjectCardProps = {
   liveLink: string;
   githubLink: string;
   isActive: boolean;
+  children?: React.ReactNode;
 };
 
 const ProjectCard = ({
@@ -18,6 +19,7 @@ const ProjectCard = ({
   liveLink,
   githubLink,
   isActive,
+  children,
 }: ProjectCardProps) => {
   return (
     <div
@@ -44,6 +46,7 @@ const ProjectCard = ({
           GitHub <IconBrandGithub />
         </a>
       </div>
+      {children && <div>{children}</div>}
     </div>
   );
 };
