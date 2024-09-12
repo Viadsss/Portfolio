@@ -1,5 +1,5 @@
 import useCursorImage from "../hooks/useCursorImage";
-import amongusGif from "../assets/among-us.gif";
+import amongusGif from "../assets/imgs/among-us.gif";
 
 const CursorTrack = () => {
   const cursorRef = useCursorImage(16, 16, 10000);
