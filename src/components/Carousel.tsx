@@ -5,14 +5,14 @@ interface CarouselProps {
   autoSlide?: boolean;
   autoSlideInterval?: number;
   slides: string[];
-  isActive: boolean;
+  isActive?: boolean;
 }
 
 const Carousel: React.FC<CarouselProps> = ({
   autoSlide = false,
   autoSlideInterval = 3000,
   slides,
-  isActive,
+  isActive = true,
 }) => {
   const [curr, setCurr] = useState(0);
 
@@ -33,7 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({
   }, [autoSlide, autoSlideInterval, slides.length]);
 
   return (
-    <div className={`relative overflow-hidden ${isActive ? "" : "hidden"}`}>
+    <div className={`relative overflow-hidden ${isActive ? "" : "md:hidden"}`}>
       <div
         className="flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${curr * 100}%)` }}
