@@ -1,22 +1,29 @@
 import { IconBrandGithub, IconEye } from "@tabler/icons-react";
 
 type ProjectCardProps = {
+  id: string;
   title: string;
   techStack: string;
   description: string;
   liveLink: string;
   githubLink: string;
+  isActive: boolean;
 };
 
 const ProjectCard = ({
+  id,
   title,
   techStack,
   description,
   liveLink,
   githubLink,
+  isActive,
 }: ProjectCardProps) => {
   return (
-    <div className="space-y-4">
+    <div
+      className={`space-y-4 pb-8 ${isActive ? "opacity-100" : "opacity-25"}`}
+      id={id}
+    >
       <h2 className="text-3xl font-bold">{title}</h2>
       <h3 className="font-bold text-slate-600 dark:text-slate-300">
         <span className="text-blue-600 dark:text-violet-400">Tech Stack: </span>
