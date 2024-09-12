@@ -1,0 +1,3 @@
+Keep the dimensions of the image for the laptop in this number in px:
+  Width: 1280
+  Height: 800
