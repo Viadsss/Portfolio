@@ -1,18 +1,14 @@
+import { useState } from "react";
 import useTheme from "../hooks/useTheme";
 import useScrollHide from "../hooks/useScrollHide";
 import { IconSun, IconMoonStars } from "@tabler/icons-react";
 import VlogoLight from "../assets/svgs/V-light.svg";
 import VLogoDark from "../assets/svgs/V-dark.svg";
-import { useState } from "react";
+import MenuButton from "../components/MenuButton";
 
 type Link = {
   name: string;
   href: string;
-};
-
-type MenuButtonProps = {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 type SmallNavProps = {
@@ -104,27 +100,6 @@ const SmallNav: React.FC<SmallNavProps> = ({ isOpen, setIsOpen }) => {
         ))}
       </ul>
     </nav>
-  );
-};
-
-const MenuButton: React.FC<MenuButtonProps> = ({ isOpen, setIsOpen }) => {
-  return (
-    <button
-      className="relative h-8 w-8 md:hidden"
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      <div className="absolute left-1/2 top-1/2 block w-5 -translate-x-1/2 -translate-y-1/2 transform">
-        <span
-          className={`absolute block h-0.5 w-5 transform bg-current transition ${isOpen ? "rotate-45" : "-translate-y-1.5"}`}
-        ></span>
-        <span
-          className={`d absolute block h-0.5 w-5 transform bg-current transition ${isOpen ? "opacity-0" : ""}`}
-        ></span>
-        <span
-          className={`absolute block h-0.5 w-5 transform bg-current transition ${isOpen ? "-rotate-45" : "translate-y-1.5"}`}
-        ></span>
-      </div>
-    </button>
   );
 };
 
