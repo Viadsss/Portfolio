@@ -1,7 +1,7 @@
 import { IconBrandGithub, IconEye } from "@tabler/icons-react";
 
 type ProjectCardProps = {
-  id: string;
+  index: string;
   title: string;
   techStack: string;
   description: string;
@@ -12,7 +12,7 @@ type ProjectCardProps = {
 };
 
 const ProjectCard = ({
-  id,
+  index,
   title,
   techStack,
   description,
@@ -22,9 +22,9 @@ const ProjectCard = ({
   children,
 }: ProjectCardProps) => {
   return (
-    <div
+    <li
       className={`space-y-4 pb-8 ${isActive ? "opacity-100" : "opacity-25"}`}
-      id={id}
+      data-project-index={index}
     >
       <h2 className="text-3xl font-bold">{title}</h2>
       <h3 className="font-bold text-slate-600 dark:text-slate-300">
@@ -47,7 +47,7 @@ const ProjectCard = ({
         </a>
       </div>
       {children && <div>{children}</div>}
-    </div>
+    </li>
   );
 };
 
