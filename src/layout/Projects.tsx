@@ -66,9 +66,8 @@ const Projects = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const id = parseInt(entry.target.id);
-          console.log(id);
-          setActiveProjectIndex(id);
+          const projectIndex = entry.target.getAttribute("data-project-index");
+          if (projectIndex) setActiveProjectIndex(parseInt(projectIndex));
         }
       });
     }, options);
@@ -78,6 +77,12 @@ const Projects = () => {
     for (const child of children) {
       observer.observe(child);
     }
+
+    return () => {
+      for (const child of children) {
+        observer.unobserve(child);
+      }
+    };
   }, []);
 
   return (
@@ -96,7 +101,7 @@ const Projects = () => {
           >
             {projects.map((project, index) => (
               <ProjectCard
-                id={index.toString()}
+                index={index.toString()}
                 key={index}
                 title={project.title}
                 techStack={project.techStack}
