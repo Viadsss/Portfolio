@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import SkillCard from "../components/SkillCard";
 import htmlSvg from "../assets/svgs/skills/html.svg";
 import cssSvg from "../assets/svgs/skills/css.svg";
 import jsSvg from "../assets/svgs/skills/js.svg";
@@ -16,9 +18,58 @@ import postgresqlSvg from "../assets/svgs/skills/postgresql.svg";
 import prismaSvg from "../assets/svgs/skills/prisma.svg";
 import mysqlSvg from "../assets/svgs/skills/mysql.svg";
 
-import SkillCard from "../components/SkillCard";
+const skills = [
+  { imgSrc: htmlSvg, title: "HTML" },
+  { imgSrc: cssSvg, title: "CSS" },
+  { imgSrc: jsSvg, title: "JavaScript" },
+  { imgSrc: tsSvg, title: "TypeScript" },
+  { imgSrc: reactSvg, title: "React" },
+  { imgSrc: reactRouterSvg, title: "React Router" },
+  { imgSrc: tailwindSvg, title: "Tailwind CSS" },
+  { imgSrc: chakrauiSvg, title: "Chakra UI" },
+  { imgSrc: nodejsSvg, title: "Node.js" },
+  { imgSrc: expressjsSvg, title: "Express.js", dark: true },
+  { imgSrc: jestSvg, title: "Jest" },
+  { imgSrc: postgresqlSvg, title: "PostgreSQL" },
+  { imgSrc: prismaSvg, title: "Prisma", dark: true },
+  { imgSrc: mysqlSvg, title: "MySQL" },
+  { imgSrc: gitSvg, title: "Git" },
+  { imgSrc: githubSvg, title: "GitHub", dark: true },
+  { imgSrc: postmanSvg, title: "Postman" },
+];
 
 const Skills = () => {
+  const ulRef = useRef<HTMLUListElement | null>(null);
+
+  useEffect(() => {
+    if (!ulRef.current) return;
+
+    const options = {};
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("opacity-0", !entry.isIntersecting);
+        entry.target.classList.toggle(
+          "-translate-x-full",
+          !entry.isIntersecting,
+        );
+        entry.target.classList.toggle("duration-1000", entry.isIntersecting);
+      });
+    }, options);
+
+    const children = ulRef.current.children;
+
+    for (const child of children) {
+      observer.observe(child);
+    }
+
+    return () => {
+      for (const child of children) {
+        observer.unobserve(child);
+      }
+    };
+  }, []);
+
   return (
     <section
       className="mx-auto grid min-h-screen max-w-screen-2xl place-content-center px-8 backdrop-blur-0"
@@ -28,24 +79,18 @@ const Skills = () => {
         <h1 className="mb-12 text-center text-2xl font-bold text-blue-600 dark:text-violet-400">
           Skills & Tools
         </h1>
-        <ul className="flex flex-wrap justify-center gap-4 md:gap-8">
-          <SkillCard imgSrc={htmlSvg} title="HTML" />
-          <SkillCard imgSrc={cssSvg} title="CSS" />
-          <SkillCard imgSrc={jsSvg} title="JavaScript" />
-          <SkillCard imgSrc={tsSvg} title="TypeScript" />
-          <SkillCard imgSrc={reactSvg} title="React" />
-          <SkillCard imgSrc={reactRouterSvg} title="React Router" />
-          <SkillCard imgSrc={tailwindSvg} title="Tailwind CSS" />
-          <SkillCard imgSrc={chakrauiSvg} title="Chakra UI" />
-          <SkillCard imgSrc={nodejsSvg} title="Node.js" />
-          <SkillCard imgSrc={expressjsSvg} title="Express.js" dark={true} />
-          <SkillCard imgSrc={jestSvg} title="Jest" />
-          <SkillCard imgSrc={postgresqlSvg} title="PostgreSQL" />
-          <SkillCard imgSrc={prismaSvg} title="Prisma" dark={true} />
-          <SkillCard imgSrc={mysqlSvg} title="MySQL" />
-          <SkillCard imgSrc={gitSvg} title="Git" />
-          <SkillCard imgSrc={githubSvg} title="GitHub" dark={true} />
-          <SkillCard imgSrc={postmanSvg} title="Postman" />
+        <ul
+          ref={ulRef}
+          className="flex flex-wrap justify-center gap-4 md:gap-8"
+        >
+          {skills.map((skill, index) => (
+            <SkillCard
+              key={index}
+              imgSrc={skill.imgSrc}
+              title={skill.title}
+              dark={skill.dark}
+            />
+          ))}
         </ul>
       </div>
     </section>
