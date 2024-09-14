@@ -92,9 +92,10 @@ const SmallNav: React.FC<SmallNavProps> = ({ isOpen, setIsOpen }) => {
           <li
             key={link.name}
             className="py-8 font-bold transition duration-200 hover:bg-blue-600 hover:text-white dark:hover:bg-violet-600"
-            onClick={() => setIsOpen(false)}
           >
-            <a href={link.href}>{link.name}</a>
+            <a href={link.href} onClick={() => setIsOpen(false)}>
+              {link.name}
+            </a>
           </li>
         ))}
       </ul>
