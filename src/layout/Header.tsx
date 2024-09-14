@@ -19,9 +19,8 @@ type SmallNavProps = {
 const links: Link[] = [
   { name: "Home", href: "#home" },
   { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "#about" },
 ];
 
 const Header = () => {
