@@ -9,7 +9,7 @@ import {
 const Home = () => {
   return (
     <section
-      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-screen-2xl flex-col transition"
+      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-screen-2xl flex-col justify-center transition"
       id="home"
     >
       <div className="flex flex-col items-center justify-center gap-4 px-6 py-8 text-center backdrop-blur-0 lg:my-12 lg:flex-row-reverse lg:text-left">
