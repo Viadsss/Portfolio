@@ -2,6 +2,12 @@ import Carousel from "../components/Carousel";
 import hidespot1 from "../assets/imgs/hidespot/Hidespot-1.png";
 import hidespot2 from "../assets/imgs/hidespot/Hidespot-2.png";
 import hidespot3 from "../assets/imgs/hidespot/Hidespot-3.png";
+import deparavia1 from "../assets/imgs/deparavia/deparavia-1.png";
+import deparavia2 from "../assets/imgs/deparavia/deparavia-2.png";
+import deparavia3 from "../assets/imgs/deparavia/deparavia-3.png";
+import pathPundit1 from "../assets/imgs/path-pundit/PathPundit-1.png";
+import pathPundit2 from "../assets/imgs/path-pundit/PathPundit-2.png";
+import pathPundit3 from "../assets/imgs/path-pundit/PathPundit-3.png";
 import shopco1 from "../assets/imgs/shop.co/shop.co-1.png";
 import shopco2 from "../assets/imgs/shop.co/shop.co-2.png";
 import shopco3 from "../assets/imgs/shop.co/shop.co-3.png";
@@ -15,6 +21,7 @@ type Project = {
   description: string;
   liveLink: string;
   githubLink: string;
+  videoOnly?: boolean;
 };
 
 const projects: Project[] = [
@@ -23,34 +30,50 @@ const projects: Project[] = [
     techStack: "Node.js, Express.js, PostgreSQL, EJS",
     description:
       "An exclusive clubhouse app where members can post anonymously. Inside the club, members can see who posted, while outsiders only see the posts. Admins have the ability to delete posts, and access is controlled by a secret passcode for membership.",
-    liveLink: "#",
-    githubLink: "#",
+    liveLink: "https://hidespot.up.railway.app/",
+    githubLink: "https://github.com/Viadsss/MembersOnly",
   },
   {
-    title: "HideSpot",
-    techStack: "Node.js, Express.js, PostgreSQL, EJS",
+    title: "Deparavia",
+    techStack: "React, Node.js, Express.js, MySQL, Chakra UI",
     description:
-      "An exclusive clubhouse app where members can post anonymously. Inside the club, members can see who posted, while outsiders only see the posts. Admins have the ability to delete posts, and access is controlled by a secret passcode for membership.",
-    liveLink: "#",
-    githubLink: "#",
+      'A healthcare management app for managing patient admissions and records. It provides secure logins for patients, doctors, and admins, enabling the management of patient data, admissions, and visits. Developed for the "Information and Management" course as a group project, where I took the lead in implementing most of the core functionality',
+    liveLink: "https://www.youtube.com/watch?v=trl7HTWvlbc",
+    githubLink: "https://github.com/Viadsss/DeparaviaApp",
+    videoOnly: true,
   },
   {
-    title: "HideSpot",
-    techStack: "Node.js, Express.js, PostgreSQL, EJS",
+    title: "Path Pundit",
+    techStack: "React, Node.js, Express.js, MySQL, Chakra UI",
     description:
-      "An exclusive clubhouse app where members can post anonymously. Inside the club, members can see who posted, while outsiders only see the posts. Admins have the ability to delete posts, and access is controlled by a secret passcode for membership.",
-    liveLink: "#",
-    githubLink: "#",
+      'A route optimization app that optimizes courier delivery routes using the Traveling Salesman Problem (TSP) and the Branch and Bound algorithm for efficient return trips to the depot. Developed as a group project for the "Design and Analysis of Algorithms" course, where I was responsible for most of the core implementation.',
+    liveLink: "https://www.youtube.com/watch?v=_YHxDOfvXPw",
+    githubLink: "https://github.com/Viadsss/PathPundit",
+    videoOnly: true,
+  },
+  {
+    title: "Shop.co",
+    techStack: "React, Typescript, Tailwind",
+    description:
+      "An online shopping cart platform that allows users to browse products, manage their cart by adding or removing items, and complete purchases. Developed to showcase my expertise in React Routers, fetching data, and handling errors.",
+    liveLink: "https://viads-shopping-cart.netlify.app/",
+    githubLink: "https://github.com/Viadsss/Shopping-Cart",
   },
 ];
 
 const slidesSets = [
-  [hidespot1, hidespot2, hidespot3], // Slides for index 0
-  [shopco1, shopco2, shopco3, shopco4], // Slides for index 1
-  [hidespot1, hidespot3], // Slides for index 2
+  [hidespot1, hidespot2, hidespot3],
+  [deparavia1, deparavia2, deparavia3],
+  [pathPundit1, pathPundit2, pathPundit3],
+  [shopco1, shopco2, shopco3, shopco4],
 ];
 
-const colorMapping = ["bg-yellow-400/60", "bg-red-400/60", "bg-orange-400/60"];
+const colorMapping = [
+  "bg-yellow-400/60",
+  "bg-red-400/60",
+  "bg-orange-400/60",
+  "bg-pink-400/60",
+];
 
 const Projects = () => {
   const projectParentRef = useRef<HTMLDivElement | null>(null);
@@ -108,6 +131,7 @@ const Projects = () => {
                 description={project.description}
                 liveLink={project.liveLink}
                 githubLink={project.githubLink}
+                videoOnly={project.videoOnly}
                 isActive={activeProjectIndex === index}
               >
                 <div
