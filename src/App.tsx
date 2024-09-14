@@ -1,6 +1,5 @@
 import CursorTrack from "./components/CursorTrack";
 import About from "./layout/About";
-import Contact from "./layout/Contact";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import Home from "./layout/Home";
@@ -16,9 +15,8 @@ export default function App() {
       <Header />
       <Home />
       <Projects />
-      <About />
       <Skills />
-      <Contact />
+      <About />
       <Footer />
     </div>
   );
