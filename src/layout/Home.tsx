@@ -4,6 +4,7 @@ import {
   IconBrandLinkedin,
   IconFileText,
   IconMail,
+  IconWorldWww,
 } from "@tabler/icons-react";
 
 const Home = () => {
@@ -46,6 +47,11 @@ const Home = () => {
               href="/resume.pdf"
               label="Resume"
               icon={<IconFileText className="h-10 w-10" />}
+            />
+            <SocialIcon
+              href="https://viadsss.github.io/Projects-site/"
+              label="Website"
+              icon={<IconWorldWww className="h-10 w-10" />}
             />
           </div>
         </div>
