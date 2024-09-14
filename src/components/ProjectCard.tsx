@@ -23,7 +23,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <li
-      className={`space-y-4 pb-8 ${isActive ? "opacity-100" : "opacity-25"}`}
+      className={`space-y-4 pb-8 list-none ${isActive ? "opacity-100" : "opacity-25"}`}
       data-project-index={index}
     >
       <h2 className="text-3xl font-bold">{title}</h2>
