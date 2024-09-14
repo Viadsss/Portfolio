@@ -7,6 +7,7 @@ export default {
       fontFamily: {
         sora: ["Sora", "sans-serif"],
         martianMono: ["Martian Mono", "system-ui"],
+        nanumPen: ["Nanum Pen Script", "cursive"],
       },
       backgroundImage: {
         "profile-img": "url('/src/assets/imgs/Me.jpg')",
