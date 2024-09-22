@@ -12,13 +12,13 @@ const Footer = () => {
     <footer className="border-t border-blue-600/30 border-zinc-900 bg-zinc-100 px-8 py-4 backdrop-blur-0 transition dark:border-violet-600/30 dark:border-zinc-100 dark:bg-zinc-900">
       <div className="flex items-center justify-center gap-x-2 text-xl">
         <SocialIcon
-          href="https://github.com/johnpaulviado"
+          href="https://github.com/viadsss"
           label="GitHub"
           icon={<IconBrandGithub />}
           rounded={true}
         />
         <SocialIcon
-          href="https://linkedin.com/in/johnpaulviado"
+          href="https://linkedin.com/in/viads"
           label="LinkedIn"
           icon={<IconBrandLinkedin />}
           rounded={true}

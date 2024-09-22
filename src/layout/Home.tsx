@@ -29,12 +29,12 @@ const Home = () => {
           </p>
           <div className="flex items-center justify-center gap-x-6 text-xl lg:justify-start">
             <SocialIcon
-              href="https://github.com/johnpaulviado"
+              href="https://github.com/viadsss"
               label="GitHub"
               icon={<IconBrandGithub className="h-10 w-10" />}
             />
             <SocialIcon
-              href="https://linkedin.com/in/johnpaulviado"
+              href="https://www.linkedin.com/in/viads"
               label="LinkedIn"
               icon={<IconBrandLinkedin className="h-10 w-10" />}
             />
