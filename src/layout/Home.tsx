@@ -34,7 +34,7 @@ const Home = () => {
               icon={<IconBrandGithub className="h-10 w-10" />}
             />
             <SocialIcon
-              href="https://www.linkedin.com/in/viads"
+              href="https://www.linkedin.com/in/jpviado"
               label="LinkedIn"
               icon={<IconBrandLinkedin className="h-10 w-10" />}
             />

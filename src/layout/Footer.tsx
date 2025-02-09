@@ -18,7 +18,7 @@ const Footer = () => {
           rounded={true}
         />
         <SocialIcon
-          href="https://linkedin.com/in/viads"
+          href="https://linkedin.com/in/jpviado"
           label="LinkedIn"
           icon={<IconBrandLinkedin />}
           rounded={true}
