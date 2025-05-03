@@ -47,7 +47,7 @@ const Header = () => {
           <div className="text-2xl font-bold">Viads</div>
         </a>
         <BigNav />
-        <div className="mr-2 flex items-center gap-x-8">
+        <div className="ml-24 mr-2 flex items-center gap-x-8">
           <button
             onClick={toggleTheme}
             className="rounded-full p-1 transition-all hover:scale-110 hover:bg-blue-600 hover:text-white dark:hover:bg-violet-600"

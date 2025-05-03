@@ -32,13 +32,15 @@ const ProjectCard = ({
       className={`list-none space-y-4 pb-8 ${isActive ? "opacity-100" : "opacity-25"}`}
       data-project-index={index}
     >
-      <h2 className="text-3xl font-bold">{title}</h2>
-      <h3 className="font-bold text-slate-600 dark:text-slate-300">
-        <span className="text-blue-600 dark:text-violet-400">Tech Stack: </span>
+      <h2 className="text-2xl font-bold md:text-3xl">{title}</h2>
+      <h3 className="text-sm font-bold text-slate-600 md:text-base dark:text-slate-300">
+        <span className="text-sm text-blue-600 md:text-base dark:text-violet-400">
+          Tech Stack:{" "}
+        </span>
         {techStack}
       </h3>
-      <p>{description}</p>
-      <div className="flex items-center gap-x-4 font-martianMono text-sm">
+      <p className="text-sm md:text-base">{description}</p>
+      <div className="flex items-center gap-x-4 font-martianMono text-xs md:text-sm">
         <a
           href={liveLink}
           className="flex items-center gap-x-2 rounded-lg border-2 border-blue-400 px-5 py-2 transition hover:border-blue-600 hover:bg-blue-600 hover:text-white dark:border-violet-400 dark:hover:border-violet-800 dark:hover:bg-violet-800"

@@ -11,7 +11,7 @@ const About = () => {
         About Me
       </h1>
       <div className="flex flex-col justify-center gap-x-16 gap-y-8 text-pretty py-8 lg:flex-row lg:px-20">
-        <div className="basis-1/2 leading-relaxed dark:text-slate-100">
+        <div className="basis-1/2 text-sm leading-relaxed md:text-base dark:text-slate-100">
           <p>
             Hi again! Thanks for scrolling this far!! 🤗 I'm currently a
             third-year BS Computer Science student at{" "}

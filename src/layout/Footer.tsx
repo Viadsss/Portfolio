@@ -44,7 +44,7 @@ const Footer = () => {
           rounded={true}
         />
       </div>
-      <div className="mt-4 text-center">
+      <div className="mt-4 text-center text-sm md:text-base">
         &copy; {currentYear} | Designed and coded with 💖 by{" "}
         <span className="font-medium text-blue-600 dark:text-violet-400">
           John Paul Viado
