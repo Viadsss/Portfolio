@@ -13,11 +13,18 @@ export default function useCursorImage(
         const posX = event.pageX + offsetX;
         const posY = event.pageY + offsetY;
 
-        const windowWidth = window.innerWidth;
-        const imageWidth = imageRef.current.offsetWidth;
-        const isOutOfBounds = posX < 0 || posX + imageWidth > windowWidth;
+        console.log("Mouse Position Y:", posY);
+        console.log(window.scrollY);
 
-        if (!isOutOfBounds) {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const imageWidth = imageRef.current.offsetWidth;
+        const imageHeight = imageRef.current.offsetHeight;
+        const isOutOfBoundsX = posX < 0 || posX + imageWidth > windowWidth;
+        const isOutOfBoundsY =
+          posY < 0 || posY + imageHeight > windowHeight + window.scrollY;
+
+        if (!isOutOfBoundsX && !isOutOfBoundsY) {
           imageRef.current.animate(
             [{ transform: `translate(${posX}px, ${posY}px)` }],
             {
