@@ -13,9 +13,6 @@ export default function useCursorImage(
         const posX = event.pageX + offsetX;
         const posY = event.pageY + offsetY;
 
-        console.log("Mouse Position Y:", posY);
-        console.log(window.scrollY);
-
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         const imageWidth = imageRef.current.offsetWidth;
