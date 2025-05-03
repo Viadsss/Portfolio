@@ -29,7 +29,7 @@ const About = () => {
           </p>
           <br />
           <p>
-            In my free time, I've been following{" "}
+            To level up my web development skills, I'm actively working through{" "}
             <a
               className="font-medium text-blue-600 dark:text-violet-400"
               href="https://www.theodinproject.com/paths/full-stack-javascript"
@@ -38,13 +38,31 @@ const About = () => {
             >
               The Odin Project's Full Stack JavaScript curriculum
             </a>{" "}
-            to improve my web development skills. Aside from coding, I like to
-            unwind by playing video games 🎮, exercising{" "}
+            and diving deep into{" "}
+            <a
+              className="font-medium text-blue-600 dark:text-violet-400"
+              href="https://laracasts.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Laracasts
+            </a>{" "}
+            to sharpen my PHP and Laravel skills. I'm always experimenting with
+            new projects and applying what I learn right away.
+          </p>
+          <br />
+          <p>
+            Outside of coding, I love playing video games 🎮, doing calisthenics
+            💪{" "}
             <span className="font-nanumPen text-slate-800 dark:text-slate-200">
-              (especially lifting)
+              (strict form!)
             </span>{" "}
-            💪, and reading manga 📚. Let me know if you've got any favorite
-            games, fitness tips, or manga I should check out!
+            , and reading manga 📚{" "}
+            <span className="font-nanumPen text-slate-800 dark:text-slate-200">
+              (waiting for translations... again)
+            </span>
+            . Got any game recommendations, fitness tips, or manga I should
+            check out? Let's chat!
           </p>
         </div>
         <div className="flex shrink-0 items-center justify-center rounded-xl">

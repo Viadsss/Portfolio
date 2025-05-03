@@ -5,20 +5,32 @@ import cssSvg from "../assets/svgs/skills/css.svg";
 import jsSvg from "../assets/svgs/skills/js.svg";
 import tsSvg from "../assets/svgs/skills/ts.svg";
 import reactSvg from "../assets/svgs/skills/react.svg";
-import reactRouterSvg from "../assets/svgs/skills/react-router.svg";
 import tailwindSvg from "../assets/svgs/skills/tailwind.svg";
 import chakrauiSvg from "../assets/svgs/skills/chakra-ui.svg";
 import nodejsSvg from "../assets/svgs/skills/node-js.svg";
-import expressjsSvg from "../assets/svgs/skills/express-js.svg";
+import expressLightSvg from "../assets/svgs/skills/ExpressJS-Light.svg";
+import expressDarkSvg from "../assets/svgs/skills/ExpressJS-Dark.svg";
 import gitSvg from "../assets/svgs/skills/git.svg";
-import githubSvg from "../assets/svgs/skills/github.svg";
 import postmanSvg from "../assets/svgs/skills/postman.svg";
 import jestSvg from "../assets/svgs/skills/jest.svg";
 import postgresqlSvg from "../assets/svgs/skills/postgresql.svg";
-import prismaSvg from "../assets/svgs/skills/prisma.svg";
 import mysqlSvg from "../assets/svgs/skills/mysql.svg";
+import GitHubLightSvg from "../assets/svgs/skills/GitHub-Light.svg";
+import GitHubDarkSvg from "../assets/svgs/skills/GitHub-Dark.svg";
+import PHPLightSvg from "../assets/svgs/skills/PHP-Light.svg";
+import PHPDarkSvg from "../assets/svgs/skills/PHP-Dark.svg";
+import LaravelSvg from "../assets/svgs/skills/Laravel.svg";
+import reactRouterSvg from "../assets/svgs/skills/react-router.svg";
 
-const skills = [
+import useTheme from "../hooks/useTheme";
+
+interface Skill {
+  imgSrc: string;
+  imgSrcDark?: string;
+  title: string;
+}
+
+const skills: Skill[] = [
   { imgSrc: htmlSvg, title: "HTML" },
   { imgSrc: cssSvg, title: "CSS" },
   { imgSrc: jsSvg, title: "JavaScript" },
@@ -28,17 +40,20 @@ const skills = [
   { imgSrc: tailwindSvg, title: "Tailwind CSS" },
   { imgSrc: chakrauiSvg, title: "Chakra UI" },
   { imgSrc: nodejsSvg, title: "Node.js" },
-  { imgSrc: expressjsSvg, title: "Express.js", dark: true },
-  { imgSrc: jestSvg, title: "Jest" },
+  { imgSrc: expressDarkSvg, imgSrcDark: expressLightSvg, title: "Express.js" },
+  { imgSrc: PHPDarkSvg, imgSrcDark: PHPLightSvg, title: "PHP" },
+  { imgSrc: LaravelSvg, title: "Laravel" },
   { imgSrc: postgresqlSvg, title: "PostgreSQL" },
-  { imgSrc: prismaSvg, title: "Prisma", dark: true },
+  // { imgSrc: prismaSvg, title: "Prisma", dark: true },
   { imgSrc: mysqlSvg, title: "MySQL" },
+  { imgSrc: jestSvg, title: "Jest" },
   { imgSrc: gitSvg, title: "Git" },
-  { imgSrc: githubSvg, title: "GitHub", dark: true },
+  { imgSrc: GitHubDarkSvg, imgSrcDark: GitHubLightSvg, title: "GitHub" },
   { imgSrc: postmanSvg, title: "Postman" },
 ];
 
 const Skills = () => {
+  const { theme } = useTheme();
   const ulRef = useRef<HTMLUListElement | null>(null);
 
   useEffect(() => {
@@ -48,12 +63,13 @@ const Skills = () => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        entry.target.classList.toggle("opacity-0", !entry.isIntersecting);
-        entry.target.classList.toggle(
-          "-translate-x-full",
-          !entry.isIntersecting,
-        );
-        entry.target.classList.toggle("duration-1000", entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "-translate-x-full");
+          entry.target.classList.add("duration-1000");
+        } else {
+          entry.target.classList.remove("duration-1000");
+          entry.target.classList.add("opacity-0", "-translate-x-full");
+        }
       });
     }, options);
 
@@ -69,6 +85,8 @@ const Skills = () => {
       }
     };
   }, []);
+
+  console.log("Theme:", theme);
 
   return (
     <section
@@ -86,9 +104,10 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <SkillCard
               key={index}
-              imgSrc={skill.imgSrc}
               title={skill.title}
-              dark={skill.dark}
+              imgSrc={skill.imgSrc}
+              imgSrcDark={skill.imgSrcDark}
+              theme={theme}
             />
           ))}
         </ul>

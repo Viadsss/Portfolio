@@ -35,7 +35,7 @@ const Carousel: React.FC<CarouselProps> = ({
   return (
     <div className={`relative overflow-hidden ${isActive ? "" : "md:hidden"}`}>
       <div
-        className="flex transition-transform duration-500 ease-out"
+        className="flex transition-transform ease-out"
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides.map((img) => (

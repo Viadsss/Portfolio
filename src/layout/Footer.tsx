@@ -8,6 +8,8 @@ import {
 import SocialIcon from "../components/SocialIcon";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="border-t border-blue-600/30 border-zinc-900 bg-zinc-100 px-8 py-4 backdrop-blur-0 transition dark:border-violet-600/30 dark:border-zinc-100 dark:bg-zinc-900">
       <div className="flex items-center justify-center gap-x-2 text-xl">
@@ -43,7 +45,7 @@ const Footer = () => {
         />
       </div>
       <div className="mt-4 text-center">
-        &copy; 2024 | Designed and coded with 💖 by{" "}
+        &copy; {currentYear} | Designed and coded with 💖 by{" "}
         <span className="font-medium text-blue-600 dark:text-violet-400">
           John Paul Viado
         </span>
