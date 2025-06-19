@@ -162,6 +162,18 @@ const Projects = () => {
             </div>
           </div>
         </div>
+        <p className="mt-12 text-center text-zinc-600 dark:text-zinc-300">
+          View the complete list of my projects&nbsp;
+          <a
+            href="https://viadsss.github.io/Projects-site/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline dark:text-violet-400"
+          >
+            here
+          </a>
+          .
+        </p>
       </div>
     </section>
   );
