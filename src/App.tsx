@@ -1,21 +1,35 @@
-import CursorTrack from "./components/CursorTrack";
-import About from "./layout/About";
-import Footer from "./layout/Footer";
-import Header from "./layout/Header";
-import Home from "./layout/Home";
-import Projects from "./layout/Projects";
-import Skills from "./layout/Skills";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-export default function App() {
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="grid-gradient-white dark:grid-gradient-dark relative h-full min-h-screen bg-zinc-100 font-sora text-black transition dark:bg-zinc-900 dark:text-white">
-      <CursorTrack />
-      <Header />
-      <Home />
-      <Projects />
-      <Skills />
-      <About />
-      <Footer />
-    </div>
-  );
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
+
+export default App
