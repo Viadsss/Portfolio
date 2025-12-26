@@ -1,0 +1,14 @@
+import { Header } from "./header";
+
+interface Props {
+  children: React.ReactNode;
+}
+
+export function AppLayout({ children }: Props) {
+  return (
+    <>
+      <Header />
+      <main className="mx-auto flex max-w-3xl flex-col px-8 pt-4">{children}</main>
+    </>
+  );
+}
