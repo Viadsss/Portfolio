@@ -3,32 +3,23 @@ import { motion, useMotionValue, useTransform } from "motion/react";
 import { Button } from "./ui/button";
 import { RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
-import CardImg1 from "@/assets/images/img-test-1.jpg";
-import CardImg2 from "@/assets/images/img-test-2.jpg";
 
-interface Card {
+export interface CardImage {
   id: number;
   url: string;
 }
 
-const cardData: Card[] = [
-  {
-    id: 1,
-    url: CardImg1,
-  },
-  {
-    id: 2,
-    url: CardImg2,
-  },
-];
-
 const cardSize = "h-52 w-40";
 
-export function SwipeCards() {
-  const [cards, setCards] = useState(cardData);
+interface Props {
+  cardsImages: CardImage[];
+}
+
+export function SwipeCards({ cardsImages }: Props) {
+  const [cards, setCards] = useState(cardsImages);
 
   const handleReset = () => {
-    setCards(cardData);
+    setCards(cardsImages);
   };
 
   return (
@@ -48,8 +39,8 @@ export function SwipeCards() {
 interface CardProps {
   id: number;
   url: string;
-  cards: Card[];
-  setCards: React.Dispatch<React.SetStateAction<Card[]>>;
+  cards: CardImage[];
+  setCards: React.Dispatch<React.SetStateAction<CardImage[]>>;
 }
 
 function Card({ id, url, setCards, cards }: CardProps) {
