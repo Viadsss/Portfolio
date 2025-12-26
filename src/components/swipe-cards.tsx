@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { motion, useMotionValue, useTransform } from "motion/react";
 import { Button } from "./ui/button";
 import { RefreshCw } from "lucide-react";
+import { cn } from "@/lib/utils";
+import CardImg1 from "@/assets/images/img-test-1.jpg";
+import CardImg2 from "@/assets/images/img-test-2.jpg";
 
 interface Card {
   id: number;
@@ -11,22 +14,15 @@ interface Card {
 const cardData: Card[] = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: CardImg1,
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: 3,
-    url: "https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: CardImg2,
   },
 ];
 
-const cardSize = {
-  width: 175,
-  height: 233,
-};
+const cardSize = "h-52 w-40";
 
 export function SwipeCards() {
   const [cards, setCards] = useState(cardData);
@@ -36,7 +32,7 @@ export function SwipeCards() {
   };
 
   return (
-    <div className="relative grid h-56 w-44 place-items-center md:mr-8">
+    <div className={cn("relative grid h-56 w-44 place-items-center md:mr-8", cardSize)}>
       {cards.length === 0 ? (
         <Button size="sm" variant="outline" onClick={handleReset}>
           <RefreshCw />
@@ -77,7 +73,10 @@ function Card({ id, url, setCards, cards }: CardProps) {
     <motion.img
       src={url}
       alt="Card image"
-      className="absolute h-56 w-44 origin-bottom rounded-lg bg-white object-cover hover:cursor-grab active:cursor-grabbing"
+      className={cn(
+        "absolute origin-bottom rounded-lg bg-white object-cover hover:cursor-grab active:cursor-grabbing",
+        cardSize
+      )}
       style={{
         gridRow: 1,
         gridColumn: 1,
