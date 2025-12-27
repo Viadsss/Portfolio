@@ -1,18 +1,30 @@
-# Portfolio
+# Portfolio Website
 
-Welcome to my portfolio! I'm John Paul Viado, a Full Stack Developer based in Quezon City, Philippines.
+A responsive portfolio website built with React and TypeScript, showcasing my skills, projects, and professional experience.
 
-## Live Website
+## Features
 
-You can view my portfolio live at: [https://viads.netlify.app/](https://viads.netlify.app/)
+- **Responsive Design** - Works across desktop, tablet, and mobile devices
+- **Dark/Light Mode** - Theme toggle with persistent user preference
+- **Animated Sections** - Intersection Observer animations on scroll
+- **Modern Stack** - Built with React, TypeScript, and Tailwind CSS
 
-## Projects
+## Tech Stack
 
-- **[HideSpot](https://github.com/Viadsss/MembersOnly)**
-- **[Deparavia](https://github.com/Viadsss/DeparaviaApp)**
-- **[PathPundit](https://github.com/Viadsss/PathPundit)**
-- **[Shop.co](https://github.com/Viadsss/Shopping-Cart)**
+- **Frontend**: React, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui
+- **Build Tool**: Vite
+- **Package Manager**: Bun
 
-## Skills
+## Getting Started
 
-- HTML, CSS, JavaScript, TypeScript, React, Node.js, Express.js Tailwind CSS, Chakra UI, PostgreSQL, MySQL, Prisma, Jest
+```bash
+# Install dependencies
+bun install
+
+# Run development server
+bun run dev
+
+# Build for production
+bun run build
+```

@@ -1,13 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+import { RouterProvider } from "react-router/dom";
 import "./index.css";
-import { ThemeProvider } from "./context/ThemeProvider.tsx";
+import "react-photo-view/dist/react-photo-view.css";
+import router from "./router";
+import { ThemeProvider } from "./components/theme-provider";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider>
-      <App />
+    <ThemeProvider defaultTheme="dark" storageKey="ui-theme">
+      <RouterProvider router={router} />
     </ThemeProvider>
-  </StrictMode>,
+  </StrictMode>
 );
