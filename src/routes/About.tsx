@@ -5,8 +5,8 @@ import landscapeDarkImg from "@/assets/images/about/landscape-dark.jpg";
 export function About() {
   return (
     <AppLayout>
-      <section className="backdrop-blur-0 mx-auto grid place-content-center" id="about">
-        <h1 className="my-6 text-center font-serif text-2xl md:text-3xl">About Me</h1>
+      <section className="grid place-content-center">
+        <h1 className="mt-6 font-serif text-3xl md:text-4xl">about me.</h1>
 
         <div className="flex flex-col justify-center gap-8 py-6 text-pretty">
           <div className="text-foreground text-sm leading-relaxed md:text-base">

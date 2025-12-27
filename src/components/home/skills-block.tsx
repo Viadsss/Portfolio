@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import HTMLSvgLight from "@/assets/images/skills/light/html-light.svg";
 import CSSSvgLight from "@/assets/images/skills/light/css-light.svg";
 import JSSvgLight from "@/assets/images/skills/light/js-light.svg";
@@ -45,38 +46,67 @@ import VSCodeSvgDark from "@/assets/images/skills/dark/vscode-dark.svg";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface SkillTool {
+  id: number;
   name: string;
   hrefLight: string;
   hrefDark: string;
 }
 
 const SkillsTools: SkillTool[] = [
-  { name: "HTML", hrefLight: HTMLSvgLight, hrefDark: HTMLSvgDark },
-  { name: "CSS", hrefLight: CSSSvgLight, hrefDark: CSSSvgDark },
-  { name: "JavaScript", hrefLight: JSSvgLight, hrefDark: JSSvgDark },
-  { name: "TypeScript", hrefLight: TSSvgLight, hrefDark: TSSvgDark },
-  { name: "Bootstrap", hrefLight: BootstrapSvgLight, hrefDark: BootstrapSvgDark },
-  { name: "Tailwind", hrefLight: TailwindSvgLight, hrefDark: TailwindSvgDark },
-  { name: "React", hrefLight: ReactSvgLight, hrefDark: ReactSvgDark },
-  { name: "Node.js", hrefLight: NodeSvgLight, hrefDark: NodeSvgDark },
-  { name: "Express", hrefLight: ExpressSvgLight, hrefDark: ExpressSvgDark },
-  { name: "PHP", hrefLight: PHPSvgLight, hrefDark: PHPSvgDark },
-  { name: "Laravel", hrefLight: LaravelSvgLight, hrefDark: LaravelSvgDark },
-  { name: "Java", hrefLight: JavaSvgLight, hrefDark: JavaSvgDark },
-  { name: "MySQL", hrefLight: MySQLSvgLight, hrefDark: MySQLSvgDark },
-  { name: "PostgreSQL", hrefLight: PostgreSQLSvgLight, hrefDark: PostgreSQLSvgDark },
-  { name: "Jest", hrefLight: JestSvgLight, hrefDark: JestSvgDark },
-  { name: "Webpack", hrefLight: WebpackSvgLight, hrefDark: WebpackSvgDark },
-  { name: "Vite", hrefLight: ViteSvgLight, hrefDark: ViteSvgDark },
-  { name: "Git", hrefLight: GitSvgLight, hrefDark: GitSvgDark },
-  { name: "GitHub", hrefLight: GitHubSvgLight, hrefDark: GitHubSvgDark },
-  { name: "Postman", hrefLight: PostmanSvgLight, hrefDark: PostmanSvgDark },
-  { name: "VSCode", hrefLight: VSCodeSvgLight, hrefDark: VSCodeSvgDark },
+  { id: 1, name: "HTML", hrefLight: HTMLSvgLight, hrefDark: HTMLSvgDark },
+  { id: 2, name: "CSS", hrefLight: CSSSvgLight, hrefDark: CSSSvgDark },
+  { id: 3, name: "JavaScript", hrefLight: JSSvgLight, hrefDark: JSSvgDark },
+  { id: 4, name: "TypeScript", hrefLight: TSSvgLight, hrefDark: TSSvgDark },
+  { id: 5, name: "Bootstrap", hrefLight: BootstrapSvgLight, hrefDark: BootstrapSvgDark },
+  { id: 6, name: "Tailwind", hrefLight: TailwindSvgLight, hrefDark: TailwindSvgDark },
+  { id: 7, name: "React", hrefLight: ReactSvgLight, hrefDark: ReactSvgDark },
+  { id: 8, name: "Node.js", hrefLight: NodeSvgLight, hrefDark: NodeSvgDark },
+  { id: 9, name: "Express", hrefLight: ExpressSvgLight, hrefDark: ExpressSvgDark },
+  { id: 10, name: "PHP", hrefLight: PHPSvgLight, hrefDark: PHPSvgDark },
+  { id: 11, name: "Laravel", hrefLight: LaravelSvgLight, hrefDark: LaravelSvgDark },
+  { id: 12, name: "Java", hrefLight: JavaSvgLight, hrefDark: JavaSvgDark },
+  { id: 13, name: "MySQL", hrefLight: MySQLSvgLight, hrefDark: MySQLSvgDark },
+  { id: 14, name: "PostgreSQL", hrefLight: PostgreSQLSvgLight, hrefDark: PostgreSQLSvgDark },
+  { id: 15, name: "Jest", hrefLight: JestSvgLight, hrefDark: JestSvgDark },
+  { id: 16, name: "Webpack", hrefLight: WebpackSvgLight, hrefDark: WebpackSvgDark },
+  { id: 17, name: "Vite", hrefLight: ViteSvgLight, hrefDark: ViteSvgDark },
+  { id: 18, name: "Git", hrefLight: GitSvgLight, hrefDark: GitSvgDark },
+  { id: 19, name: "GitHub", hrefLight: GitHubSvgLight, hrefDark: GitHubSvgDark },
+  { id: 20, name: "Postman", hrefLight: PostmanSvgLight, hrefDark: PostmanSvgDark },
+  { id: 21, name: "VSCode", hrefLight: VSCodeSvgLight, hrefDark: VSCodeSvgDark },
 ];
 
-function SkillToolCard({ skillTool }: { skillTool: SkillTool }) {
+function SkillToolCard({ skillTool, isVisible }: { skillTool: SkillTool; isVisible: boolean }) {
+  const [isThemeChanging, setIsThemeChanging] = useState(false);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsThemeChanging(true);
+      setTimeout(() => setIsThemeChanging(false), 0);
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <Card className="hover:bg-secondary/25 dark:hover:bg-primary/25 flex aspect-square w-32 flex-col items-center justify-around p-4 transition">
+    <Card
+      data-skill-card
+      data-id={skillTool.id}
+      className={`hover:bg-secondary/25 dark:hover:bg-primary/25 flex aspect-square w-32 flex-col items-center justify-around p-4 ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+      }`}
+      style={{
+        transitionProperty: isThemeChanging ? "opacity, transform" : "opacity, transform, background-color",
+        transitionDuration: isThemeChanging ? "0.5s, 0.5s" : "0.5s, 0.5s, 0.3s",
+        transitionTimingFunction: "ease",
+        transitionDelay: `${skillTool.id * 0.05}s, ${skillTool.id * 0.05}s, 0s`,
+      }}
+    >
       <div className="flex flex-1 items-center justify-center">
         <img src={skillTool.hrefLight} alt={skillTool.name} className="w-12 dark:hidden" />
         <img src={skillTool.hrefDark} alt={skillTool.name} className="hidden w-12 dark:block" />
@@ -89,12 +119,33 @@ function SkillToolCard({ skillTool }: { skillTool: SkillTool }) {
 }
 
 export function SkillsBlock() {
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = Number(entry.target.getAttribute("data-id"));
+            setVisibleCards((prev) => new Set(prev).add(id));
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    const cards = document.querySelectorAll("[data-skill-card]");
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div>
       <h2 className="mb-6 font-serif text-2xl sm:text-3xl">skills & tools.</h2>
       <div className="flex flex-wrap justify-center gap-4">
         {SkillsTools.map((skillTool) => (
-          <SkillToolCard key={skillTool.name} skillTool={skillTool} />
+          <SkillToolCard key={skillTool.id} skillTool={skillTool} isVisible={visibleCards.has(skillTool.id)} />
         ))}
       </div>
     </div>

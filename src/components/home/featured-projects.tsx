@@ -29,7 +29,7 @@ const getLinkIcon = (type: Link["type"]) => {
   }
 };
 
-function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="bg-card text-card-foreground flex flex-col rounded-xl border shadow">
       <div className="flex flex-col space-y-1.5 p-6">
