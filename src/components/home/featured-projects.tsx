@@ -56,7 +56,7 @@ export function ProjectCard({ project }: { project: Project }) {
   }, [project]);
 
   return (
-    <div className="bg-card text-card-foreground flex flex-col rounded-xl border shadow">
+    <div className="bg-card text-card-foreground flex h-full flex-col rounded-xl border shadow">
       <div className="flex flex-col space-y-1.5 p-6">
         {imageSrc === null ? (
           <div className="bg-muted h-40 w-full animate-pulse rounded-lg" />
@@ -78,7 +78,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <p>{project.description}</p>
         </div>
       </div>
-      <div className="flex h-full flex-col items-start justify-between gap-4 p-6 pt-0">
+      <div className="flex h-full flex-col items-start justify-end gap-4 p-6 pt-0">
         <div className="mt-1 flex flex-wrap gap-1">
           {project.badges.map((badge, index) => (
             <div
