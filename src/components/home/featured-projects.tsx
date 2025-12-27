@@ -4,7 +4,6 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useEffect, useRef, useState } from "react";
 
 export interface Project {
-  id: number;
   title: string;
   description: string;
   image: () => Promise<{ default: string }>;

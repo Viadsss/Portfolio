@@ -2,8 +2,9 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { SwipeCards, type CardImage } from "@/components/swipe-cards";
 import { AppLayout } from "@/components/app-layout";
 import { HeroContent, type Profile } from "@/components/home/hero-content";
-import CardImg1 from "@/assets/images/swipe-cards/img-test-1.jpg";
-import CardImg2 from "@/assets/images/swipe-cards/img-test-2.jpg";
+import MeImg1 from "@/assets/images/swipe-cards/me-1.jpg";
+import MeImg2 from "@/assets/images/swipe-cards/me-2.jpg";
+import MeImg3 from "@/assets/images/swipe-cards/me-3.jpg";
 import TpgImg from "@/assets/images/timeline/experience/tpg.jpeg";
 import PupImg from "@/assets/images/timeline/education/pup.png";
 import HsnhsImg from "@/assets/images/timeline/education/hsnhs.jpg";
@@ -31,8 +32,9 @@ export function Home() {
   };
 
   const cardImagesData: CardImage[] = [
-    { id: 1, url: CardImg1 },
-    { id: 2, url: CardImg2 },
+    { id: 3, url: MeImg3 },
+    { id: 2, url: MeImg2 },
+    { id: 1, url: MeImg1 },
   ];
 
   const experienceTimelines: TimelineItem[] = [
@@ -94,8 +96,8 @@ export function Home() {
   ];
 
   const featuredProjects: Project[] = [
-    personalProjects.find((p) => p.id === 1)!, // Yappr
-    groupProjects.find((p) => p.id === 1)!, // TeksStrike
+    ...personalProjects.filter((p) => ["MeloBeats", "Yappr"].includes(p.title)),
+    ...groupProjects.filter((p) => ["HomeRoom", "Deparavia"].includes(p.title)),
   ];
 
   return (
@@ -108,7 +110,7 @@ export function Home() {
         <TimelineJourney experinceTimelines={experienceTimelines} educationTimelines={educationTimelines} />
       </section>
       <section className="mt-16 flex flex-col gap-6">
-        <FeaturedProjects projects={featuredProjects}  />
+        <FeaturedProjects projects={featuredProjects} />
       </section>
       <section className="mt-16">
         <SkillsBlock />
