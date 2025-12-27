@@ -21,7 +21,7 @@ export function Home() {
     location: "Quezon City, Philippines",
     flag: "🇵🇭",
     description: "Backend by trade, full-stack by passion. Building meaningful apps, one line at a time.",
-    resumeUrl: "/viado_resume.pdf",
+    resumeUrl: "/resume.pdf",
     socials: [
       { href: "https://linkedin.com/in/yourprofile", icon: Linkedin, label: "LinkedIn" },
       { href: "https://github.com/yourprofile", icon: Github, label: "GitHub" },
