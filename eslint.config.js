@@ -21,9 +21,10 @@ export default defineConfig([
     },
   },
   {
-    files: ["resources/js/components/ui/**/*.{ts,tsx}"],
+    files: ["src/components/ui/**/*.{ts,tsx}"],
     rules: {
       "react-hooks/immutability": "off",
+      "react-refresh/only-export-components": "off",
     },
   },
 ]);
