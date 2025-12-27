@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { ArrowRight, Github, GlobeIcon, Youtube } from "lucide-react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface Project {
   id: number;
@@ -114,6 +114,15 @@ export function ProjectCard({ project }: { project: Project }) {
 }
 
 export function FeaturedProjects({ projects }: { projects: Project[] }) {
+  const featuredCardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const handleIndexChange = (index: number) => {
+    featuredCardRefs.current[index]?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
   return (
     <>
       <div className="flex w-full items-end justify-between gap-2">
@@ -124,9 +133,16 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
         </Link>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <PhotoProvider>
+        <PhotoProvider onIndexChange={handleIndexChange}>
           {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <div
+              key={index}
+              ref={(el) => {
+                featuredCardRefs.current[index] = el;
+              }}
+            >
+              <ProjectCard key={index} project={project} />
+            </div>
           ))}
         </PhotoProvider>
       </div>
