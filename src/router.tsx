@@ -1,4 +1,5 @@
 import { createBrowserRouter, redirect } from "react-router";
+import { RootErrorBoundary } from "./routes/RootErrorBoundary";
 
 const router = createBrowserRouter([
   {
@@ -7,6 +8,7 @@ const router = createBrowserRouter([
       const { Home } = await import("./routes/Home");
       return { Component: Home };
     },
+    ErrorBoundary: RootErrorBoundary,
   },
   {
     path: "/home",
