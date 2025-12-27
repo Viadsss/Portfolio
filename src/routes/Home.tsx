@@ -10,6 +10,7 @@ import HsnhsImg from "@/assets/images/timeline/education/hsnhs.jpg";
 import DostImg from "@/assets/images/timeline/experience/dost-sei.svg";
 import { TimelineJourney } from "@/components/home/timeline-journey";
 import type { TimelineItem } from "@/components/timeline";
+import { FeaturedProjects, type Project } from "@/components/home/featured-projects";
 
 export function Home() {
   const profile: Profile = {
@@ -90,14 +91,47 @@ export function Home() {
     },
   ];
 
+  const projects: Project[] = [
+    {
+      id: 1,
+      title: "Sample Project",
+      description: "This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      image: CardImg1,
+      date: "Jan 2024",
+      badges: ["react", "tailwindcss", "nextjs"],
+      links: [
+        { type: "website", url: "https://example.com", label: "Website" },
+        { type: "github", url: "https://github.com/example", label: "GitHub" },
+        { type: "youtube", url: "https://youtube.com", label: "YouTube" },
+      ],
+    },
+    {
+      id: 2,
+      title: "Sample Project 2",
+      description:
+        "This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      image: CardImg2,
+      date: "Jan 2024",
+      badges: ["react", "tailwindcss", "nextjs"],
+      links: [
+        { type: "website", url: "https://example.com", label: "Website" },
+        { type: "github", url: "https://github.com/example", label: "GitHub" },
+        { type: "youtube", url: "https://youtube.com", label: "YouTube" },
+      ],
+    },
+  ];
+
   return (
     <AppLayout>
       <section className="flex flex-col items-center justify-center gap-8 md:flex-row-reverse md:items-center md:justify-between">
         <SwipeCards cardsImages={cardImagesData} />
         <HeroContent profile={profile} />
       </section>
-      <section className="mt-16 flex">
+      <section className="mt-16">
         <TimelineJourney experinceTimelines={experienceTimelines} educationTimelines={educationTimelines} />
+      </section>
+      <section className="mt-16 flex flex-col gap-6">
+        <FeaturedProjects projects={projects} />
       </section>
     </AppLayout>
   );

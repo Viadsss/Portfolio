@@ -1,9 +1,8 @@
 import { Link } from "react-router";
 import { ArrowRight, Github, GlobeIcon, Youtube } from "lucide-react";
-import ImgTest2 from "@/assets/images/swipe-cards/img-test-2.jpg";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
-interface Project {
+export interface Project {
   id: number;
   title: string;
   description: string;
@@ -18,35 +17,6 @@ interface Link {
   url: string;
   label: string;
 }
-
-const project: Project = {
-  id: 1,
-  title: "Sample Project",
-  description: "This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  image: ImgTest2,
-  date: "Jan 2024",
-  badges: ["react", "tailwindcss", "nextjs"],
-  links: [
-    { type: "website", url: "https://example.com", label: "Website" },
-    { type: "github", url: "https://github.com/example", label: "GitHub" },
-    { type: "youtube", url: "https://youtube.com", label: "YouTube" },
-  ],
-};
-
-const project2: Project = {
-  id: 2,
-  title: "Sample Project 2",
-  description:
-    "This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-  image: ImgTest2,
-  date: "Jan 2024",
-  badges: ["react", "tailwindcss", "nextjs"],
-  links: [
-    { type: "website", url: "https://example.com", label: "Website" },
-    { type: "github", url: "https://github.com/example", label: "GitHub" },
-    { type: "youtube", url: "https://youtube.com", label: "YouTube" },
-  ],
-};
 
 const getLinkIcon = (type: Link["type"]) => {
   switch (type) {
@@ -63,19 +33,17 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="bg-card text-card-foreground flex flex-col rounded-xl border shadow">
       <div className="flex flex-col space-y-1.5 p-6">
-        <PhotoProvider>
-          <PhotoView src={project.image}>
-            <img
-              className="h-40 w-full cursor-pointer object-cover object-top transition-opacity hover:opacity-90"
-              src={project.image}
-              alt={project.title}
-            />
-          </PhotoView>
-        </PhotoProvider>
+        <PhotoView src={project.image}>
+          <img
+            className="h-40 w-full cursor-pointer object-cover object-top drop-shadow-lg transition-opacity hover:opacity-90"
+            src={project.image}
+            alt={project.title}
+          />
+        </PhotoView>
       </div>
       <div className="flex flex-col gap-2 p-6 pt-0">
         <h3 className="leading-none font-semibold tracking-tight">{project.title}</h3>
-        <div className="prose text-muted-foreground dark:prose-invert max-w-full font-sans text-xs text-pretty">
+        <div className="prose text-muted-foreground dark:prose-invert max-w-full font-sans text-sm text-pretty">
           <p>{project.description}</p>
         </div>
       </div>
@@ -98,7 +66,7 @@ function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 href={link.url}
                 key={index}
-                className="focus:ring-ring bg-primary text-primary-foreground hover:bg-primary/80 items-center gap-2 rounded-md border border-transparent px-2 py-1 text-[10px] font-semibold shadow transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
+                className="focus:ring-ring bg-primary text-primary-foreground hover:bg-primary/80 items-center gap-2 rounded-md border border-transparent px-2 py-1 text-[10px] font-medium shadow transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
               >
                 <div className="flex items-center gap-2">
                   <LinkIcon className="size-3.5" />
@@ -113,7 +81,7 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
-export function FeaturedProjects() {
+export function FeaturedProjects({ projects }: { projects: Project[] }) {
   return (
     <>
       <div className="flex w-full items-end justify-between gap-2">
@@ -124,8 +92,11 @@ export function FeaturedProjects() {
         </Link>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <ProjectCard project={project} />
-        <ProjectCard project={project2} />
+        <PhotoProvider>
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </PhotoProvider>
       </div>
     </>
   );

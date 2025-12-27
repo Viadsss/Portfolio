@@ -74,8 +74,9 @@ function SocialLink({ href, icon: Icon, label }: SocialLinkProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="opacity-70 transition hover:opacity-100"
+      className="hover:text-primary opacity-70 transition hover:opacity-100"
     >
+      <span className="sr-only">{label}</span>
       <Icon size={20} strokeWidth={2.25} />
     </a>
   );
