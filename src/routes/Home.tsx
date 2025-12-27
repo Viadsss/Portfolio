@@ -12,6 +12,7 @@ import { TimelineJourney } from "@/components/home/timeline-journey";
 import type { TimelineItem } from "@/components/timeline";
 import { FeaturedProjects, type Project } from "@/components/home/featured-projects";
 import { SkillsBlock } from "@/components/home/skills-block";
+import { groupProjects, personalProjects } from "@/components/projects/data";
 
 export function Home() {
   const profile: Profile = {
@@ -92,34 +93,9 @@ export function Home() {
     },
   ];
 
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "Sample Project",
-      description: "This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: CardImg1,
-      date: "Jan 2024",
-      badges: ["react", "tailwindcss", "nextjs"],
-      links: [
-        { type: "website", url: "https://example.com", label: "Website" },
-        { type: "github", url: "https://github.com/example", label: "GitHub" },
-        { type: "youtube", url: "https://youtube.com", label: "YouTube" },
-      ],
-    },
-    {
-      id: 2,
-      title: "Sample Project 2",
-      description:
-        "This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a sample project description. lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      image: CardImg2,
-      date: "Jan 2024",
-      badges: ["react", "tailwindcss", "nextjs"],
-      links: [
-        { type: "website", url: "https://example.com", label: "Website" },
-        { type: "github", url: "https://github.com/example", label: "GitHub" },
-        { type: "youtube", url: "https://youtube.com", label: "YouTube" },
-      ],
-    },
+  const featuredProjects: Project[] = [
+    personalProjects.find((p) => p.id === 1)!, // Yappr
+    groupProjects.find((p) => p.id === 1)!, // TeksStrike
   ];
 
   return (
@@ -132,7 +108,7 @@ export function Home() {
         <TimelineJourney experinceTimelines={experienceTimelines} educationTimelines={educationTimelines} />
       </section>
       <section className="mt-16 flex flex-col gap-6">
-        <FeaturedProjects projects={projects} />
+        <FeaturedProjects projects={featuredProjects}  />
       </section>
       <section className="mt-16">
         <SkillsBlock />

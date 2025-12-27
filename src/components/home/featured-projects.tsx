@@ -1,12 +1,13 @@
 import { Link } from "react-router";
 import { ArrowRight, Github, GlobeIcon, Youtube } from "lucide-react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
+import { useEffect, useState } from "react";
 
 export interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image: () => Promise<{ default: string }>;
   date: string;
   badges: string[];
   links: Link[];
@@ -30,20 +31,49 @@ const getLinkIcon = (type: Link["type"]) => {
 };
 
 export function ProjectCard({ project }: { project: Project }) {
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    project
+      .image()
+      .then((module) => {
+        if (isMounted) {
+          setImageSrc(module.default);
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to load image:", error);
+        if (isMounted) {
+          setImageSrc("");
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [project]);
+
   return (
     <div className="bg-card text-card-foreground flex flex-col rounded-xl border shadow">
       <div className="flex flex-col space-y-1.5 p-6">
-        <PhotoView src={project.image}>
-          <img
-            className="h-40 w-full cursor-pointer object-cover object-top drop-shadow-lg transition-opacity hover:opacity-90"
-            src={project.image}
-            alt={project.title}
-          />
-        </PhotoView>
+        {imageSrc === null ? (
+          <div className="bg-muted h-40 w-full animate-pulse rounded-lg" />
+        ) : (
+          <PhotoView src={imageSrc}>
+            <img
+              className="h-40 w-full cursor-pointer object-cover object-top drop-shadow-lg transition-opacity hover:opacity-90"
+              src={imageSrc}
+              alt={project.title}
+              loading="lazy"
+            />
+          </PhotoView>
+        )}
       </div>
       <div className="flex flex-col gap-2 p-6 pt-0">
         <h3 className="leading-none font-semibold tracking-tight">{project.title}</h3>
-        <div className="prose text-muted-foreground dark:prose-invert max-w-full font-sans text-sm text-pretty">
+        <div className="prose dark:prose-invert text-muted-foreground max-w-full font-sans text-sm text-pretty">
           <p>{project.description}</p>
         </div>
       </div>
@@ -64,6 +94,7 @@ export function ProjectCard({ project }: { project: Project }) {
             return (
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href={link.url}
                 key={index}
                 className="focus:ring-ring bg-primary text-primary-foreground hover:bg-primary/80 items-center gap-2 rounded-md border border-transparent px-2 py-1 text-[10px] font-medium shadow transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
@@ -93,8 +124,8 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <PhotoProvider>
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
           ))}
         </PhotoProvider>
       </div>
