@@ -11,6 +11,7 @@ import DostImg from "@/assets/images/timeline/experience/dost-sei.svg";
 import { TimelineJourney } from "@/components/home/timeline-journey";
 import type { TimelineItem } from "@/components/timeline";
 import { FeaturedProjects, type Project } from "@/components/home/featured-projects";
+import { SkillsBlock } from "@/components/home/skills-block";
 
 export function Home() {
   const profile: Profile = {
@@ -132,6 +133,9 @@ export function Home() {
       </section>
       <section className="mt-16 flex flex-col gap-6">
         <FeaturedProjects projects={projects} />
+      </section>
+      <section className="mt-16">
+        <SkillsBlock />
       </section>
     </AppLayout>
   );

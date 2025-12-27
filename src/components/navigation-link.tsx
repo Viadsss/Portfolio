@@ -33,6 +33,7 @@ export function NavigationLink({
         )
       }
       {...props}
+      viewTransition
     >
       {children}
     </NavLink>
