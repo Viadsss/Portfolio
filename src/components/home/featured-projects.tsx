@@ -73,12 +73,13 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
       <div className="flex flex-col gap-2 p-6 pt-0">
         <h3 className="leading-none font-semibold tracking-tight">{project.title}</h3>
-        <div className="prose dark:prose-invert text-muted-foreground max-w-full font-sans text-sm text-pretty">
+        <p className="text-muted-foreground -mt-1 font-mono text-[11px]">{project.date}</p>
+        <div className="prose dark:prose-invert text-card-foreground max-w-full font-sans text-sm text-pretty">
           <p>{project.description}</p>
         </div>
       </div>
       <div className="flex h-full flex-col items-start justify-between gap-4 p-6 pt-0">
-        <div className="mt-2 flex flex-wrap gap-1">
+        <div className="mt-1 flex flex-wrap gap-1">
           {project.badges.map((badge, index) => (
             <div
               key={index}
