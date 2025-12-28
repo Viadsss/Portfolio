@@ -73,7 +73,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="flex flex-col gap-2 p-6 pt-0">
         <h3 className="leading-none font-semibold tracking-tight">{project.title}</h3>
         <p className="text-muted-foreground -mt-1 font-mono text-[11px]">{project.date}</p>
-        <div className="prose dark:prose-invert text-card-foreground max-w-full font-sans text-sm text-pretty">
+        <div className="prose dark:prose-invert text-card-foreground max-w-full font-sans text-sm text-justify">
           <p>{project.description}</p>
         </div>
       </div>
