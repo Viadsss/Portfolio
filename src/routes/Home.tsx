@@ -25,9 +25,9 @@ export function Home() {
     description: "Backend by trade, full-stack by passion. Building meaningful apps, one line at a time.",
     resumeUrl: "/resume.pdf",
     socials: [
-      { href: "https://linkedin.com/in/yourprofile", icon: Linkedin, label: "LinkedIn" },
-      { href: "https://github.com/yourprofile", icon: Github, label: "GitHub" },
-      { href: "mailto:your.email@example.com", icon: Mail, label: "Email" },
+      { href: "https://linkedin.com/in/jpviado", icon: Linkedin, label: "LinkedIn" },
+      { href: "https://github.com/Viadsss", icon: Github, label: "GitHub" },
+      { href: "mailto:johnpaulviado20@gmail.com", icon: Mail, label: "Email" },
     ],
   };
 

@@ -9,9 +9,9 @@ interface SocialLinkProps {
 }
 
 const footerLinks: SocialLinkProps[] = [
-  { href: "https://linkedin.com/in/yourprofile", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://github.com/yourprofile", icon: Github, label: "GitHub" },
-  { href: "mailto:your.email@example.com", icon: Mail, label: "Email" },
+  { href: "https://linkedin.com/in/jpviado", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://github.com/Viadsss", icon: Github, label: "GitHub" },
+  { href: "mailto:johnpaulviado20@gmail.com", icon: Mail, label: "Email" },
 ];
 
 export function Footer() {
