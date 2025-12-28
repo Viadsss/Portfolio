@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { ArrowRight, Github, GlobeIcon, Youtube } from "lucide-react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useEffect, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
 
 export interface Project {
   title: string;
@@ -73,7 +74,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="flex flex-col gap-2 p-6 pt-0">
         <h3 className="leading-none font-semibold tracking-tight">{project.title}</h3>
         <p className="text-muted-foreground -mt-1 font-mono text-[11px]">{project.date}</p>
-        <div className="prose dark:prose-invert text-card-foreground max-w-full font-sans text-sm text-justify">
+        <div className="prose dark:prose-invert text-card-foreground max-w-full text-justify font-sans text-sm">
           <p>{project.description}</p>
         </div>
       </div>
@@ -92,18 +93,12 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.links.map((link, index) => {
             const LinkIcon = getLinkIcon(link.type);
             return (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={link.url}
-                key={index}
-                className="focus:ring-ring bg-primary text-primary-foreground hover:bg-primary/80 items-center gap-2 rounded-md border border-transparent px-2 py-1 text-[10px] font-medium shadow transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
-              >
-                <div className="flex items-center gap-2">
-                  <LinkIcon className="size-3.5" />
+              <Badge key={index} className="rounded-sm" asChild>
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  <LinkIcon className="h-3.5 w-3.5" strokeWidth={2.25} />
                   {link.label}
-                </div>
-              </a>
+                </a>
+              </Badge>
             );
           })}
         </div>

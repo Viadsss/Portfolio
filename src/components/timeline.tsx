@@ -93,7 +93,7 @@ function TimelineItemComponent({ item, isLast, type }: TimelineItemProps) {
               return (
                 <Badge key={index} className="rounded-sm" asChild>
                   <a href={link.url} target="_blank" rel="noopener noreferrer">
-                    <LinkIcon className="h-3.5 w-3.5" />
+                    <LinkIcon className="h-3.5 w-3.5" strokeWidth={2.25} />
                     {link.label}
                   </a>
                 </Badge>
