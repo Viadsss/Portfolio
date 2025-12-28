@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform } from "motion/react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -47,6 +47,7 @@ function Card({ id, url, setCards, cards }: CardProps) {
   const x = useMotionValue(0);
   const rotateRaw = useTransform(x, [-150, 150], [-18, 18]);
   const opacity = useTransform(x, [-150, 0, 150], [0, 1, 0]);
+
   const isFront = id === cards[cards.length - 1].id;
 
   const rotate = useTransform(() => {
@@ -55,7 +56,7 @@ function Card({ id, url, setCards, cards }: CardProps) {
   });
 
   const handleDragEnd = () => {
-    if (Math.abs(x.get()) > 100) {
+    if (Math.abs(x.get()) > 40) {
       setCards((pv) => pv.filter((v) => v.id !== id));
     }
   };
@@ -76,6 +77,7 @@ function Card({ id, url, setCards, cards }: CardProps) {
         rotate,
         transition: "0.125s transform",
         boxShadow: isFront ? "0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5)" : undefined,
+        touchAction: "none",
       }}
       animate={{
         scale: isFront ? 1 : 0.98,
