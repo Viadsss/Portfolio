@@ -49,10 +49,7 @@ export function Home() {
         "Refactored and organized codebase by separating Bootstrap and Tailwind examples into modular files, improving maintainability across Libraries, Forms, Feedback, and Tables sections",
         "Implemented File Upload, Contact, and Profile forms with dual framework support (React and Vue), ensuring consistency and proper validation",
       ],
-      links: [
-        { type: "website", url: "https://techcorp.com", label: "Company Website" },
-        { type: "github", url: "https://github.com/project", label: "View Project" },
-      ],
+      links: [{ type: "website", url: "https://www.sei.dost.gov.ph", label: "Website" }],
     },
     {
       id: 2,
@@ -64,7 +61,10 @@ export function Home() {
         "Developed and integrated the Info Page and Hero Page for the official organization website using React.js, Next.js, and TypeScript.",
         "Improved content structure and accessibility for prospective members through enhanced UI components",
       ],
-      links: [{ type: "website", url: "https://university.edu", label: "University" }],
+      links: [
+        { type: "website", url: "https://puptpg.org", label: "Website" },
+        { type: "github", url: "https://github.com/PUP-The-Programmers-Guild/TPGWebsite", label: "GitHub" },
+      ],
     },
   ];
 
