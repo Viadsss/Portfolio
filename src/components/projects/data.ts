@@ -193,6 +193,21 @@ export const personalProjects: Project[] = [
 
 export const groupProjects: Project[] = [
   {
+    title: "Isko360",
+    badges: ["PHP", "Laravel", "React", "Tailwind", "Inertia.js"],
+    description:
+      "Isko360 is a centralized, database-driven platform designed to modernize the management, monitoring, and tracking of DOST-SEI scholars at PUP Main Campus. It addresses the current problems of fragmented data, manual processes, and delayed communication between scholars and administrators.",
+    image: () => import("@/assets/images/projects/group/Isko360.png"),
+    date: "January 2025",
+    links: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=qRJWe-ymJnM",
+        label: "Video",
+      },
+    ],
+  },
+  {
     title: "HomeRoom",
     description:
       'A digital platform for managing housing and rental processes for landlords and tenants. The system enables payment tracking, record management, and in-app communication. Built as a full-stack Laravel application with features such as queued jobs, scheduled tasks, real-time chat, billing automation, overdue notifications, and file sharing. Developed collaboratively for the "Web Development" course.',
