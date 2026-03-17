@@ -18,6 +18,7 @@ import WebpackSvgLight from "@/assets/images/skills/light/webpack-light.svg";
 import ViteSvgLight from "@/assets/images/skills/light/vite-light.svg";
 import GitSvgLight from "@/assets/images/skills/light/git-light.svg";
 import GitHubSvgLight from "@/assets/images/skills/light/github-light.svg";
+import DockerSvgLight from "@/assets/images/skills/light/docker-light.svg";
 import PostmanSvgLight from "@/assets/images/skills/light/postman-light.svg";
 import VSCodeSvgLight from "@/assets/images/skills/light/vscode-light.svg";
 
@@ -40,6 +41,7 @@ import WebpackSvgDark from "@/assets/images/skills/dark/webpack-dark.svg";
 import ViteSvgDark from "@/assets/images/skills/dark/vite-dark.svg";
 import GitSvgDark from "@/assets/images/skills/dark/git-dark.svg";
 import GitHubSvgDark from "@/assets/images/skills/dark/github-dark.svg";
+import DockerSvgDark from "@/assets/images/skills/dark/docker-dark.svg";
 import PostmanSvgDark from "@/assets/images/skills/dark/postman-dark.svg";
 import VSCodeSvgDark from "@/assets/images/skills/dark/vscode-dark.svg";
 
@@ -72,6 +74,7 @@ const SkillsTools: SkillTool[] = [
   { id: 17, name: "Vite", hrefLight: ViteSvgLight, hrefDark: ViteSvgDark },
   { id: 18, name: "Git", hrefLight: GitSvgLight, hrefDark: GitSvgDark },
   { id: 19, name: "GitHub", hrefLight: GitHubSvgLight, hrefDark: GitHubSvgDark },
+  { id: 20, name: "Docker", hrefLight: DockerSvgLight, hrefDark: DockerSvgDark },
   { id: 20, name: "Postman", hrefLight: PostmanSvgLight, hrefDark: PostmanSvgDark },
   { id: 21, name: "VSCode", hrefLight: VSCodeSvgLight, hrefDark: VSCodeSvgDark },
 ];
