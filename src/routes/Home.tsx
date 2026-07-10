@@ -76,8 +76,8 @@ export function Home() {
       image: PupImg,
       title: "Bachelor of Science in Computer Science (BSCS)",
       company: "Polytechnic University of the Philippines",
-      date: "Oct 2022 - Present",
-      bullets: ["GWA of 1.23, Consistent President's Lister and DOST MERIT JLSS Scholar"],
+      date: "Oct 2022 - Jun 2026",
+      bullets: ["Magna Cum Laude", "DOST MERIT JLSS Scholar"],
       links: [{ type: "website", url: "https://www.pup.edu.ph", label: "University Website" }],
     },
     {
