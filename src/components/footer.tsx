@@ -19,7 +19,7 @@ export function Footer() {
 
   return (
     <footer className="w-full pt-12">
-      <div className="mx-auto flex max-w-3xl flex-col items-center justify-center px-8 pb-24 sm:flex-row-reverse sm:justify-between">
+      <div className="mx-auto flex max-w-3xl flex-col items-center justify-center px-8 pb-6 sm:flex-row-reverse sm:justify-between">
         <section className="flex gap-6">
           {footerLinks.map((link) => (
             <a

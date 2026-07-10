@@ -23,7 +23,7 @@ export function Home() {
     role: "software developer",
     location: "Quezon City, Philippines",
     flag: "🇵🇭",
-    description: "Backend by trade, full-stack by passion. Building meaningful apps, one line at a time.",
+    description: "Always learning, always building.",
     resumeUrl: "/resume.pdf",
     socials: [
       { href: "https://linkedin.com/in/jpviado", icon: Linkedin, label: "LinkedIn" },
