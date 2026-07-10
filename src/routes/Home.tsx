@@ -5,6 +5,7 @@ import { HeroContent, type Profile } from "@/components/home/hero-content";
 import MeImg1 from "@/assets/images/swipe-cards/me-1.jpg";
 import MeImg2 from "@/assets/images/swipe-cards/me-2.jpg";
 import MeImg3 from "@/assets/images/swipe-cards/me-3.jpg";
+import MeImg4 from "@/assets/images/swipe-cards/me-4.jpg";
 import TpgImg from "@/assets/images/timeline/experience/tpg.jpeg";
 import PupImg from "@/assets/images/timeline/education/pup.png";
 import HsnhsImg from "@/assets/images/timeline/education/hsnhs.jpg";
@@ -32,6 +33,7 @@ export function Home() {
   };
 
   const cardImagesData: CardImage[] = [
+    { id: 4, url: MeImg4 },
     { id: 3, url: MeImg3 },
     { id: 2, url: MeImg2 },
     { id: 1, url: MeImg1 },

@@ -11,14 +11,14 @@ export function About() {
         <div className="flex flex-col justify-center gap-8 py-6 text-pretty">
           <div className="text-foreground text-sm leading-relaxed md:text-base">
             <p>
-              Hi again! Thanks for reading this far!! 🤗 I'm currently a fourth-year BS Computer Science student at{" "}
+              Hi again! Thanks for reading this far!! 🤗 I'm a BS Computer Science graduate from the{" "}
               <a
                 className="text-primary font-medium hover:underline"
                 href="https://www.pup.edu.ph/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                PUP Sta. Mesa, Manila
+                Polytechnic University of the Philippines (PUP) - Manila
               </a>
               . I started learning how to code in my first year, and I've been hooked ever since. What keeps me going is
               the constant challenge of problem-solving and the satisfaction that comes with finishing a project. 🎯
@@ -27,32 +27,15 @@ export function About() {
             <br />
 
             <p>
-              To further improve my web development skills, I’m actively working through{" "}
-              <a
-                className="text-primary font-medium hover:underline"
-                href="https://www.theodinproject.com/paths/full-stack-javascript"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                The Odin Project's Full Stack JavaScript curriculum
-              </a>{" "}
-              while diving deep into{" "}
-              <a
-                className="text-primary font-medium hover:underline"
-                href="https://laracasts.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Laracasts
-              </a>{" "}
-              to strengthen my PHP and Laravel skills. I enjoy building small to medium-scale projects and applying what
-              I learn as I go.
+              To continue improving my skills, I'm actively exploring modern web technologies and building projects
+              using React, TypeScript, Laravel, and other tools in the JavaScript ecosystem. I enjoy creating small to
+              medium-scale applications that help me learn new concepts and write cleaner, more maintainable code.
             </p>
 
             <br />
 
             <p>
-              Outside of coding, I love playing video games 🎮, doing calisthenics 💪{" "}
+              Outside of coding, I love playing video games 🎮, lifting at the gym 💪{" "}
               <span className="font-nanumPen text-muted-foreground">(strict form!)</span>, and reading manga 📚{" "}
               <span className="font-nanumPen text-muted-foreground">(waiting for translations... again)</span>. Got any
               game recommendations, fitness tips, or manga I should check out? Let's chat!
