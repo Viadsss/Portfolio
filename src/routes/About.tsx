@@ -42,13 +42,26 @@ export function About() {
             </p>
           </div>
 
-          <div className="flex shrink-0 items-center justify-center rounded-xl">
-            <img src={landscapeImg} className="size-48 rounded-xl md:size-60 lg:size-72 dark:hidden" alt="Landscape" />
-            <img
-              src={landscapeDarkImg}
-              className="hidden size-48 rounded-xl md:size-60 lg:size-72 dark:block"
-              alt="Landscape Dark"
-            />
+          <div className="relative flex shrink-0 items-center justify-center rounded-xl">
+            <div className="relative">
+              <img
+                src={landscapeImg}
+                className="size-48 rounded-xl md:size-60 lg:size-72 dark:hidden"
+                alt="Landscape"
+              />
+              <img
+                src={landscapeDarkImg}
+                className="hidden size-48 rounded-xl md:size-60 lg:size-72 dark:block"
+                alt="Landscape Dark"
+              />
+
+              {/* Floating caption with arrow */}
+              <div className="absolute -right-24 -bottom-16 my-4">
+                <span className="font-nanumPen focus:ring-ring bg-secondary text-secondary-foreground hover:bg-secondary/80 inline-flex max-w-36 animate-[bounce_3s_infinite] items-center rounded-xl border border-transparent px-3 py-1 text-center text-sm font-semibold shadow-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none md:max-w-44 md:text-base">
+                  ↖ Pictures I took on Skyranch Tagaytay!
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
