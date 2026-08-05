@@ -2,12 +2,27 @@ import { type Project } from "@/components/home/featured-projects";
 
 export const personalProjects: Project[] = [
   {
+    title: "TymFitness",
+    description:
+      "TymFitness is a multi-branch gym management platform for staff and members to manage memberships, payments, and check-ins. It features role-scoped access across branches, a kiosk-based QR check-in flow, and a self-service member portal for tracking membership status and payment history.",
+    image: () => import("@/assets/images/projects/personal/TymFitness.png"),
+    date: "August 2026",
+    badges: ["React", "TypeScript", "C#", "ASP.NET Core Web API", "Tailwind"],
+    links: [
+      {
+        type: "github",
+        url: "https://github.com/Viadsss/Multi-Branch-Gym-Management-System",
+        label: "GitHub",
+      },
+    ],
+  },
+  {
     title: "MeloBeats",
     description:
       "MeloBeats is a web application that allows users to convert YouTube and Spotify videos, tracks, or playlists into MP3 files. Playlists are automatically compressed into a ZIP file for convenient downloading, making it easy to save and enjoy music offline.",
     image: () => import("@/assets/images/projects/personal/MeloBeats.png"),
     date: "August 2025",
-    badges: ["React", "Node.js", "Express.js", "Tailwind", "Tailwind"],
+    badges: ["React", "Node.js", "Express.js", "Tailwind"],
     links: [
       { type: "github", url: "https://github.com/Viadsss/MeloBeats", label: "GitHub" },
       { type: "youtube", url: "https://www.youtube.com/watch?v=V_nn7GmrllQ", label: "Video" },

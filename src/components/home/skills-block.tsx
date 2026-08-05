@@ -11,6 +11,8 @@ import ExpressSvgLight from "@/assets/images/skills/light/express-light.svg";
 import PHPSvgLight from "@/assets/images/skills/light/php-light.svg";
 import LaravelSvgLight from "@/assets/images/skills/light/laravel-light.svg";
 import JavaSvgLight from "@/assets/images/skills/light/java-light.svg";
+import CSharpSvgLight from "@/assets/images/skills/light/cs-light.svg";
+import DotNetSvgLight from "@/assets/images/skills/light/dotnet-light.svg";
 import MySQLSvgLight from "@/assets/images/skills/light/mysql-light.svg";
 import PostgreSQLSvgLight from "@/assets/images/skills/light/postgres-light.svg";
 import JestSvgLight from "@/assets/images/skills/light/jest-light.svg";
@@ -34,6 +36,8 @@ import ExpressSvgDark from "@/assets/images/skills/dark/express-dark.svg";
 import PHPSvgDark from "@/assets/images/skills/dark/php-dark.svg";
 import LaravelSvgDark from "@/assets/images/skills/dark/laravel-dark.svg";
 import JavaSvgDark from "@/assets/images/skills/dark/java-dark.svg";
+import CSharpSvgDark from "@/assets/images/skills/dark/cs-dark.svg";
+import DotNetSvgDark from "@/assets/images/skills/dark/dotnet-dark.svg";
 import MySQLSvgDark from "@/assets/images/skills/dark/mysql-dark.svg";
 import PostgreSQLSvgDark from "@/assets/images/skills/dark/postgres-dark.svg";
 import JestSvgDark from "@/assets/images/skills/dark/jest-dark.svg";
@@ -67,16 +71,18 @@ const SkillsTools: SkillTool[] = [
   { id: 10, name: "PHP", hrefLight: PHPSvgLight, hrefDark: PHPSvgDark },
   { id: 11, name: "Laravel", hrefLight: LaravelSvgLight, hrefDark: LaravelSvgDark },
   { id: 12, name: "Java", hrefLight: JavaSvgLight, hrefDark: JavaSvgDark },
-  { id: 13, name: "MySQL", hrefLight: MySQLSvgLight, hrefDark: MySQLSvgDark },
-  { id: 14, name: "PostgreSQL", hrefLight: PostgreSQLSvgLight, hrefDark: PostgreSQLSvgDark },
-  { id: 15, name: "Jest", hrefLight: JestSvgLight, hrefDark: JestSvgDark },
-  { id: 16, name: "Webpack", hrefLight: WebpackSvgLight, hrefDark: WebpackSvgDark },
-  { id: 17, name: "Vite", hrefLight: ViteSvgLight, hrefDark: ViteSvgDark },
-  { id: 18, name: "Git", hrefLight: GitSvgLight, hrefDark: GitSvgDark },
-  { id: 19, name: "GitHub", hrefLight: GitHubSvgLight, hrefDark: GitHubSvgDark },
-  { id: 20, name: "Docker", hrefLight: DockerSvgLight, hrefDark: DockerSvgDark },
-  { id: 20, name: "Postman", hrefLight: PostmanSvgLight, hrefDark: PostmanSvgDark },
-  { id: 21, name: "VSCode", hrefLight: VSCodeSvgLight, hrefDark: VSCodeSvgDark },
+  { id: 13, name: "C#", hrefLight: CSharpSvgLight, hrefDark: CSharpSvgDark },
+  { id: 14, name: ".NET", hrefLight: DotNetSvgLight, hrefDark: DotNetSvgDark },
+  { id: 15, name: "MySQL", hrefLight: MySQLSvgLight, hrefDark: MySQLSvgDark },
+  { id: 16, name: "PostgreSQL", hrefLight: PostgreSQLSvgLight, hrefDark: PostgreSQLSvgDark },
+  { id: 17, name: "Jest", hrefLight: JestSvgLight, hrefDark: JestSvgDark },
+  { id: 18, name: "Webpack", hrefLight: WebpackSvgLight, hrefDark: WebpackSvgDark },
+  { id: 19, name: "Vite", hrefLight: ViteSvgLight, hrefDark: ViteSvgDark },
+  { id: 20, name: "Git", hrefLight: GitSvgLight, hrefDark: GitSvgDark },
+  { id: 21, name: "GitHub", hrefLight: GitHubSvgLight, hrefDark: GitHubSvgDark },
+  { id: 22, name: "Docker", hrefLight: DockerSvgLight, hrefDark: DockerSvgDark },
+  { id: 23, name: "Postman", hrefLight: PostmanSvgLight, hrefDark: PostmanSvgDark },
+  { id: 24, name: "VSCode", hrefLight: VSCodeSvgLight, hrefDark: VSCodeSvgDark },
 ];
 
 function SkillToolCard({ skillTool, isVisible }: { skillTool: SkillTool; isVisible: boolean }) {

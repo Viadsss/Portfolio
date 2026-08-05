@@ -98,8 +98,8 @@ export function Home() {
   ];
 
   const featuredProjects: Project[] = [
-    ...personalProjects.filter((p) => ["MeloBeats"].includes(p.title)),
-    ...groupProjects.filter((p) => ["Isko360", "HomeRoom", "Deparavia"].includes(p.title)),
+    ...personalProjects.filter((p) => ["MeloBeats", "TymFitness"].includes(p.title)),
+    ...groupProjects.filter((p) => ["Isko360", "Deparavia"].includes(p.title)),
   ];
 
   return (
